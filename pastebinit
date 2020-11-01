@@ -414,6 +414,8 @@ try:
             else:
                 print(_("Could not find any json library."), file=sys.stderr)
                 sys.exit(1)
+        elif post_format == 'content':
+            params = bytes(content, encoding='utf-8')
         else:
             # Convert to a format usable with the HTML POST
             params = bytes(urlencode(params), encoding='US-ASCII')
